@@ -44,10 +44,7 @@ export default function ReviewDropdown() {
         </li>
         {["หน้าเรียว", "ยกกระชับ", "หน้าใส", "ผิวเรียบเนียน"].map((name) => (
           <li key={name}>
-            <Link
-              className="bg-[#034437] text-white py-1 px-6 rounded-full"
-              href="/"
-            >
+            <Link className="pill" href="/">
               {name}
             </Link>
           </li>

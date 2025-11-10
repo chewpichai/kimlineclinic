@@ -1,4 +1,3 @@
-import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import PromotionList from "@/components/promotion-list";
 import ReviewList from "@/components/review-list";
@@ -6,20 +5,13 @@ import ServiceList from "@/components/service-list";
 import ReviewDropdown from "@/components/ui/review-dropdown";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaPhone,
-  FaTiktok,
-  FaWhatsapp,
-} from "react-icons/fa";
 
 export default function Page() {
   return (
-    <div>
+    <main>
       <Hero />
 
-      <div>
+      <section>
         <div className="container flex flex-col md:flex-row gap-8 items-center">
           <div className="md:w-6/12 lg:w-7/12">
             <Image
@@ -34,21 +26,21 @@ export default function Page() {
             <h1 className="text-primary text-3xl font-bold mb-4">
               The Kimline Clinic
               <p className="text-base lg:text-xl font-light">
-                คลินิกความงามหาดใหญ่ มาตรฐานเดียวกับเกาหลี
+                คลินิกความงามหาดใหญ่มาตรฐานเดียวกับเกาหลี
               </p>
             </h1>
             <p>
               โปรแกรมฟิลเลอร์ โบท็อกซ์ ยกกระชับ หน้าใส ดริปผิว เลเซอร์
               คิมไลน์ตอกย้ำจุดแข็งด้วย{" "}
               <strong>นวัตกรรมความงามสไตล์เกาหลี</strong>{" "}
-              เชื่อมั่นว่าไม่ต้องบินไกลไปถึงเกาหลี ก็ได้รับการดูแลแบบเดียวกัน
+              เชื่อมั่นว่าไม่ต้องบินไกลไปถึงเกาหลีก็ได้รับการดูแลแบบเดียวกัน
               ทั้งด้านคุณภาพของแท้ ปลอดภัย ไม่ผสม ไม่ลดสเปก
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="bg-accent">
+      <section className="bg-accent">
         <div className="container">
           <h2>โปรโมชั่นล่าสุด</h2>
           <PromotionList />
@@ -56,9 +48,9 @@ export default function Page() {
             ดูโปรโมชั่นทั้งหมด
           </Link>
         </div>
-      </div>
+      </section>
 
-      <div>
+      <section>
         <div className="container">
           <h2>บริการของเรา</h2>
           <ServiceList />
@@ -66,89 +58,93 @@ export default function Page() {
             ดูบริการทั้งหมด
           </Link>
         </div>
-      </div>
+      </section>
 
-      <div className="bg-accent">
+      <section className="bg-accent">
         <div className="container">
           <h2>รีวิวผู้ใช้บริการ</h2>
           <ReviewDropdown />
           <ReviewList />
         </div>
-      </div>
+      </section>
 
-      <div>
+      <section>
         <div className="container pb-16!">
           <h2 className="mb-4!">ทำไมต้อง คิมไลน์</h2>
           <p className="text-center mb-8 font-extralight">
             ทุกการดูแลเหมือนเลือกสิ่งที่ดีที่สุดให้ตัวเอง <br />
             "เพราะสวย ไม่จำเป็นต้องเจ็บ"
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
-            <div className="aspect-square flex flex-col justify-center rounded-4xl bg-secondary">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-64 sm:max-w-xl mx-auto">
+            <div className="aspect-square flex flex-col justify-center rounded-2xl bg-secondary">
               <Image
-                className="rounded-full mx-auto w-24"
+                className="rounded-full mx-auto size-16"
                 src="/home/why-01.webp"
                 alt="เทคโนโลยีใหม่"
                 width={220}
                 height={220}
               />
-              <p className="text-primary-200 text-center mt-2">เทคโนโลยีใหม่</p>
+              <p className="text-primary-200 text-center mt-2 text-sm">
+                เทคโนโลยีใหม่
+              </p>
             </div>
-            <div className="aspect-square flex flex-col justify-center rounded-4xl bg-secondary">
+            <div className="aspect-square flex flex-col justify-center rounded-2xl bg-secondary">
               <Image
-                className="rounded-full mx-auto w-24"
+                className="rounded-full mx-auto size-16"
                 src="/home/why-02.webp"
                 alt="เจ็บน้อย"
                 width={220}
                 height={220}
               />
-              <p className="text-primary-200 text-center mt-2">เจ็บน้อย</p>
+              <p className="text-primary-200 text-center mt-2 text-sm">
+                เจ็บน้อย
+              </p>
             </div>
-            <div className="aspect-square flex flex-col justify-center rounded-4xl bg-secondary">
+            <div className="aspect-square flex flex-col justify-center rounded-2xl bg-secondary">
               <Image
-                className="rounded-full mx-auto w-24"
+                className="rounded-full mx-auto size-16"
                 src="/home/why-03.webp"
                 alt="ปลอดภัย"
                 width={220}
                 height={220}
               />
-              <p className="text-primary-200 text-center mt-2">ปลอดภัย</p>
+              <p className="text-primary-200 text-center mt-2 text-sm">
+                ปลอดภัย
+              </p>
             </div>
-            <div className="aspect-square flex flex-col justify-center rounded-4xl bg-secondary">
+            <div className="aspect-square flex flex-col justify-center rounded-2xl bg-secondary">
               <Image
-                className="rounded-full mx-auto w-24"
+                className="rounded-full mx-auto size-16"
                 src="/home/why-04.webp"
                 alt="นวัตกรรมเกาหลี"
                 width={220}
                 height={220}
               />
-              <p className="text-primary-200 text-center mt-2">
+              <p className="text-primary-200 text-center mt-2 text-sm">
                 นวัตกรรมเกาหลี
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="bg-secondary">
+      <section className="bg-secondary">
         <div className="container pt-0!">
-          <h2 className="bg-secondary text-primary-200! border-4 border-white rounded-full w-fit mx-auto px-16 py-4 -translate-y-1/2 my-0!">
+          <h2 className="bg-secondary text-primary-200 border-4 border-white rounded-full w-fit mx-auto px-16 py-4 -translate-y-1/2 my-0!">
             เกี่ยวกับเรา
           </h2>
           <h3 className="text-primary-200!">เดอะ คิมไลน์ คลินิก</h3>
           <div className="bg-white h-px w-1/6 my-4 mx-auto" />
-          <p className="text-justify mx-auto text-primary max-w-2xl">
-            คลินิกความงามหาดใหญ่
-            เกิดจากความหลงใหลในความงามสไตล์เกาหลีของผู้ก่อตั้ง
+          <p className="mx-auto text-primary max-w-2xl">
+            คลินิกความงามหาดใหญ่เกิดจากความหลงใหลในความงามสไตล์เกาหลีของผู้ก่อตั้ง
             ที่รักทั้งวัฒนธรรม การบริการ และเทรนด์ความงามจากเกาหลี
-            ด้วยประสบการณ์ตรงจากการอัปเดตเทรนด์และเทคโนโลยี K-Beauty
-            จากคลินิกชั้นนำในเกาหลี
-            พื่อนำมาตรฐานการดูแลระดับเกาหลีมาบริการให้คนหาดใหญ่ได้สัมผัสใกล้บ้าน
+            ด้วยประสบการณ์ตรงจากการอัปเดตเทรนด์ และเทคโนโลยี K-Beauty
+            จากคลินิกชั้นนำในเกาหลีเพื่อนำมาตรฐานการดูแลระดับเกาหลีมาบริการให้คนหาดใหญ่ได้สัมผัสใกล้บ้าน
           </p>
         </div>
-      </div>
+      </section>
 
-      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 container">
+      <section className="flex flex-col sm:flex-row gap-2 sm:gap-4 container">
         <div className="sm:w-1/2 border-6 border-secondary rounded-xl">
           <iframe
             className="aspect-video rounded-lg"
@@ -171,71 +167,7 @@ export default function Page() {
             ตั้งแต่เวลา 10:00 - 20:00 น.
           </p>
         </div>
-      </div>
-
-      <div className="bg-accent">
-        <div className="container mx-auto py-8 px-16">
-          <h2 className="text-3xl text-center mb-8">ติดต่อเรา</h2>
-          <ul className="grid grid-cols-3 sm:grid-cols-6 gap-2 max-w-52 sm:max-w-104 mx-auto">
-            <li>
-              <Link
-                href="#"
-                className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
-              >
-                <FaFacebookF className="w-8 h-8" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
-              >
-                <FaInstagram className="w-8 h-8" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
-              >
-                <Image
-                  className="w-8 h-8"
-                  src="/icon-line.svg"
-                  alt="line"
-                  width={171}
-                  height={171}
-                />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
-              >
-                <FaTiktok className="w-8 h-8" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
-              >
-                <FaWhatsapp className="w-8 h-8" />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
-              >
-                <FaPhone className="w-8 h-8" />
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <Footer />
-    </div>
+      </section>
+    </main>
   );
 }

@@ -12,7 +12,7 @@
     font-family: var(--font-kanit);
   }
 
-  h2 {
+  h1,h2 {
     @apply font-semibold text-3xl text-center mb-8 text-primary;
   }
 

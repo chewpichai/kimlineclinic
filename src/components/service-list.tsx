@@ -1,5 +1,6 @@
 "use client";
 
+import { SERVICES } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import Carousel from "react-multi-carousel";
@@ -23,29 +24,15 @@ export default function ServiceList() {
 
   return (
     <Carousel responsive={responsive} className="p-2" centerMode infinite>
-      {[
-        "ONDA PRO",
-        "MYOUNG",
-        "ฟิลเลอร์",
-        "โบท็อกซ์",
-        "ร้อยไหม",
-        "บูสผิว",
-        "ดริปวิตามิน และทรีทเมนต์",
-        "หน้าเรียว",
-        "ยกกระชับ",
-        "หน้าใส",
-      ].map((name, i) => (
+      {SERVICES.map(({ name, image, href }) => (
         <div className="p-3">
-          <Link href="#">
+          <Link href={href}>
             <Image
               className="rounded-2xl hover:scale-110 transition duration-300 ease-in-out"
-              src={`/home/service-${String(Math.min(i + 1, 4)).padStart(
-                2,
-                "0"
-              )}.webp`}
-              alt="โปรโมชั่นล่าสุด"
-              width={738}
-              height={738}
+              src={`/service/${image}-th.jpg`}
+              alt={name}
+              width={1200}
+              height={1200}
             />
             <p className="text-center mt-4">{name}</p>
           </Link>

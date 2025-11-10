@@ -1,30 +1,34 @@
+import { MAIN_MENU } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import LanguageDropdown from "./ui/language-dropdown";
+import MenuDropdown from "./ui/menu-dropdown";
 
 export default function Header() {
   return (
-    <div className="flex py-2 px-4 items-center shadow">
+    <header className="flex py-2 px-4 items-center shadow">
       <div className="flex-1">
         <Image
-          className="aspect-square w-16"
+          className="size-12 sm:size-16"
           src="/logo.svg"
           alt="The Kimline Clicnic"
           width={144}
           height={137}
         />
       </div>
+
       <div className="items-center flex">
+        <MenuDropdown className="mr-2 sm:hidden" />
+
         <ul className="hidden sm:flex">
-          <li className="px-6 border-r border-r-secondary">
-            <Link href="/">หน้าแรก</Link>
-          </li>
-          <li className="px-6 border-r border-r-secondary">
-            <Link href="/">แพ็คเกจ</Link>
-          </li>
-          <li className="px-6">
-            <Link href="/">บริการ</Link>
-          </li>
+          {MAIN_MENU.map(({ name, href }) => (
+            <li
+              key={name}
+              className="px-6 not-last:border-r border-r-secondary]"
+            >
+              <Link href={href}>{name}</Link>
+            </li>
+          ))}
         </ul>
 
         <Link className="pill ml-2 mr-4" href="/">
@@ -33,6 +37,6 @@ export default function Header() {
 
         <LanguageDropdown />
       </div>
-    </div>
+    </header>
   );
 }
