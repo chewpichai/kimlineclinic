@@ -1,13 +1,17 @@
+import { REVIEWS } from "@/constants";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa6";
 
-export default function ReviewDropdown() {
+export default async function ReviewDropdown() {
+  const t = await getTranslations("Review");
+
   return (
     <div className="pb-4 mb-4 border-b-2 border-b-secondary">
       <Menu as="div" className="relative flex sm:hidden">
         <MenuButton className="pill inline-flex items-center gap-1 ml-auto">
-          รีวิวทั้งหมด
+          {t("msg01")}
           <FaChevronDown className="text-sm" />
         </MenuButton>
 
@@ -16,36 +20,32 @@ export default function ReviewDropdown() {
           className="absolute right-0 z-10 mt-8 w-56 origin-top-right rounded-md bg-secondary shadow-lg outline-1 outline-black/5 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
         >
           <div className="py-1">
-            {[
-              "รีวิวทั้งหมด",
-              "หน้าเรียว",
-              "ยกกระชับ",
-              "หน้าใส",
-              "ผิวเรียบเนียน",
-            ].map((name) => (
-              <MenuItem key={name}>
-                <Link
-                  href="#"
-                  className="block px-4 py-2 text-sm text-white data-focus:bg-accent data-focus:text-accent data-focus:outline-hidden"
-                >
-                  {name}
-                </Link>
-              </MenuItem>
-            ))}
+            {[{ name: "msg01", href: "/review" }, ...REVIEWS].map(
+              ({ name, href }) => (
+                <MenuItem key={name}>
+                  <Link
+                    href={href}
+                    className="block px-4 py-2 text-sm text-white data-focus:bg-accent data-focus:text-accent data-focus:outline-hidden"
+                  >
+                    {t(name)}
+                  </Link>
+                </MenuItem>
+              )
+            )}
           </div>
         </MenuItems>
       </Menu>
 
       <ul className="gap-1 hidden sm:flex">
         <li className="mr-auto">
-          <Link className="pill" href="/">
-            ดูรีวิวทั้งหมด
+          <Link className="pill" href="/review">
+            {t("msg01")}
           </Link>
         </li>
-        {["หน้าเรียว", "ยกกระชับ", "หน้าใส", "ผิวเรียบเนียน"].map((name) => (
+        {REVIEWS.map(({ name, href }) => (
           <li key={name}>
-            <Link className="pill" href="/">
-              {name}
+            <Link className="pill" href={href}>
+              {t(name)}
             </Link>
           </li>
         ))}

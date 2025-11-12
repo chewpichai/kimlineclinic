@@ -3,21 +3,21 @@ import Image from "next/image";
 
 export default async function Page() {
   const locale = await getLocale();
-  const t = await getTranslations("WeightLossPen");
+  const t = await getTranslations("VShapedFace");
 
   return (
     <main>
       <section>
         <Image
           className="w-full sm:hidden"
-          src={`/service/weight-loss-pen/banner-weight-loss-pen-4-3-${locale}.jpg`}
+          src={`/service/v-shaped-face/banner-v-shaped-face-4-3-${locale}.jpg`}
           alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/service/weight-loss-pen/banner-weight-loss-pen-16-9-${locale}.jpg`}
+          src={`/service/v-shaped-face/banner-v-shaped-face-16-9-${locale}.jpg`}
           alt={t("msg01")}
           width={1920}
           height={720}
@@ -30,8 +30,8 @@ export default async function Page() {
           <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
             <Image
               className="size-72 rounded-4xl object-cover"
-              src="/service/weight-loss-pen/weight-loss-pen.jpg"
-              alt={t("msg02")}
+              src="/service/v-shaped-face/thread-lift.jpg"
+              alt={t("msg01")}
               width={1200}
               height={1200}
             />
@@ -45,61 +45,63 @@ export default async function Page() {
       </section>
 
       <section className="bg-accent">
-        <div className="container flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-between">
-          <div className="space-y-2">
-            <h3 className="text-2xl text-start">{t("msg05")}</h3>
-            <ul className="list-disc pl-4">
-              <li>{t("msg06")}</li>
-              <li>{t("msg07")}</li>
-              <li>{t("msg08")}</li>
-              <li>{t("msg09")}</li>
-              <li>{t("msg10")}</li>
-            </ul>
-          </div>
+        <div className="container space-y-2">
           <Image
-            className="size-72 rounded-xl object-cover"
-            src="/service/weight-loss-pen/how-it-works.jpg"
+            className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
+            src={`/service/v-shaped-face/v-shaped-face-${locale}.jpg`}
             alt={t("msg05")}
             width={1200}
             height={1200}
           />
+          <h3 className="text-2xl text-start">{t("msg05")}</h3>
+          <ol className="list-decimal pl-4">
+            <li>
+              {t("msg06")}
+              <br />
+              <span className="font-light">{t("msg07")}</span>
+            </li>
+            <li>
+              {t("msg08")}
+              <br />
+              <span className="font-light">{t("msg09")}</span>
+            </li>
+          </ol>
         </div>
       </section>
 
       <section>
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">{t("msg11")}</h3>
+          <h3 className="text-2xl text-start">{t("msg10")}</h3>
           <ul className="list-disc pl-4">
+            <li>{t("msg11")}</li>
             <li>{t("msg12")}</li>
             <li>{t("msg13")}</li>
             <li>{t("msg14")}</li>
-            <li>{t("msg15")}</li>
           </ul>
         </div>
       </section>
 
       <section className="bg-accent">
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">{t("msg16")}</h3>
+          <h3 className="text-2xl text-start">{t("msg15")}</h3>
           <ul className="list-disc pl-4">
+            <li>{t("msg16")}</li>
             <li>{t("msg17")}</li>
             <li>{t("msg18")}</li>
             <li>{t("msg19")}</li>
             <li>{t("msg20")}</li>
-            <li>{t("msg21")}</li>
           </ul>
         </div>
       </section>
 
       <section>
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">{t("msg22")}</h3>
+          <h3 className="text-2xl text-start">{t("msg21")}</h3>
           <ul className="list-disc pl-4">
+            <li>{t("msg22")}</li>
             <li>{t("msg23")}</li>
             <li>{t("msg24")}</li>
             <li>{t("msg25")}</li>
-            <li>{t("msg26")}</li>
-            <li>{t("msg27")}</li>
           </ul>
         </div>
       </section>

@@ -28,7 +28,7 @@ export default function PromotionList() {
           <Link href="#">
             <Image
               className="rounded-2xl hover:scale-110 transition duration-300 ease-in-out"
-              src="/home/promotion-01.webp"
+              src="/home/promotion.webp"
               alt="โปรโมชั่นล่าสุด"
               width={1008}
               height={1008}

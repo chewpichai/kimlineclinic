@@ -1,20 +1,24 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-export default function Page() {
+export default async function Page() {
+  const locale = await getLocale();
+  const t = await getTranslations("Onda");
+
   return (
     <main>
       <section>
         <Image
           className="w-full sm:hidden"
-          src="/service/onda/service-onda-banner-4-3-th.jpg"
-          alt="เครื่องยกกระชับ สลายไขมัน Onda Pro"
+          src={`/service/onda/service-onda-banner-4-3-${locale}.jpg`}
+          alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src="/service/onda/service-onda-banner-16-9-th.jpg"
-          alt="เครื่องยกกระชับ สลายไขมัน Onda Pro"
+          src={`/service/onda/service-onda-banner-16-9-${locale}.jpg`}
+          alt={t("msg01")}
           width={1920}
           height={720}
         />
@@ -22,34 +26,19 @@ export default function Page() {
 
       <section>
         <div className="container">
-          <h1 className="border-b border-b-secondary pb-4">
-            เครื่องยกกระชับสลายไขมัน Onda Pro
-          </h1>
-          <div className="flex flex-col sm:flex-row gap-4 items-center">
+          <h1 className="border-b border-b-secondary pb-4">{t("msg01")}</h1>
+          <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
             <Image
               className="size-72 rounded-4xl object-cover"
               src="/service/onda/onda-1200x1200.jpg"
-              alt="Onda Pro คืออะไร"
+              alt={t("msg02")}
               width={1200}
               height={1200}
             />
             <div className="space-y-2">
-              <h3 className="text-start">Onda Pro คืออะไร</h3>
-              <p>
-                Onda Pro คือเทคโนโลยีระดับพรีเมียมจากอิตาลีที่ใช้คลื่นไมโครเวฟ
-                (Microwave Technology) ในการสลายไขมัน กระชับผิว และลดเซลลูไลต์
-                ได้อย่างมีประสิทธิภาพโดยไม่ต้องผ่าตัด ได้รับการรับรองจาก US FDA
-                และ CE Medical Europe ว่าปลอดภัย และให้ผลลัพธ์จริง
-              </p>
-              <p>
-                ใช้พลังงานไมโครเวฟความถี่เฉพาะ Coolwaves™ 2.45 GHz ปัจจุบัน Onda
-                Pro เป็นเทคโนโลยีที่ได้รับความนิยมอย่างมากในประเทศเกาหลีใต้
-                เพราะเป็นหนึ่งในเทคนิค Body Contouring
-                ที่คลินิกเกาหลีชั้นนำเลือกใช้เพื่อช่วยปรับรูปร่าง ยกกระชับ
-                และลดไขมันอย่างเห็นผลโดยไม่ต้องพักฟื้น
-                และเป็นแรงบันดาลใจให้คลินิกในไทยอย่าง The Kimline Clinic
-                นำเข้ามาให้บริการเพื่อให้ลูกค้าในหาดใหญ่ได้สัมผัสเทคโนโลยีระดับเดียวกับคลินิกเกาหลี
-              </p>
+              <h3 className="text-start">{t("msg02")}</h3>
+              <p>{t("msg03")}</p>
+              <p>{t("msg04")}</p>
             </div>
           </div>
         </div>
@@ -57,78 +46,74 @@ export default function Page() {
 
       <section>
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">เทคโนโลยี 3 หัวของ Onda Pro</h3>
+          <h3 className="text-2xl text-start">{t("msg05")}</h3>
           <Image
             className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
             src="/service/onda/pocket-shallow-deep.jpg"
-            alt="เทคโนโลยี 3 หัวของ Onda Pro"
+            alt={t("msg05")}
             width={1550}
             height={570}
           />
-          <p>
-            <strong>Onda Pro มีหัวทิปทั้งหมด 3 รูปแบบ</strong>{" "}
-            ที่ออกแบบเฉพาะสำหรับปัญหาผิว และไขมันแต่ละประเภท
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: t.raw("msg06") }} />
           <ol className="list-decimal pl-4">
             <li>
-              <strong>Deep Handpiece</strong> สำหรับสลายไขมันชั้นลึก เช่น
-              หน้าท้อง ต้นขา สะโพก หรือพุงล่าง
+              Deep Handpiece
+              <br />
+              <span className="font-light">{t("msg07")}</span>
             </li>
             <li>
-              <strong>Shallow Handpiece</strong> สำหรับลดเซลลูไลต์ผิวไม่เรียบ
-              ผิวเปลือกส้ม ให้เรียบเนียน และกระชับขึ้น
+              Shallow Handpiece
+              <br />
+              <span className="font-light">{t("msg08")}</span>
             </li>
             <li>
-              <strong>Pocket Handpiece</strong> สำหรับยกกระชับผิวบริเวณใบหน้า
-              เหนียง คอ หรือต้นแขน
+              Pocket Handpiece
+              <br />
+              <span className="font-light">{t("msg09")}</span>
             </li>
           </ol>
-          <p>
-            เทคโนโลยีทั้งสามหัวนี้ทำงานร่วมกันอย่างแม่นยำเพื่อผลลัพธ์ที่เห็นชัดในทุกชั้นของผิว
-          </p>
+          <p>{t("msg10")}</p>
         </div>
       </section>
 
       <section className="bg-accent">
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">
-            ระบบ Cooling -5°C ของ Onda Pro
-          </h3>
-          <p>
-            หนึ่งในเทคโนโลยีที่ทำให้ Onda Pro แตกต่างจากเครื่องสลายไขมันทั่วไป
-            คือระบบ Cooling ที่สามารถทำความเย็นได้ถึง -5°C
-            โดยหัวทิปของเครื่องจะปล่อยพลังงานไมโครเวฟเฉพาะจุดลงไปยังชั้นไขมัน
-            พร้อมกับระบบทำความเย็นที่คงอุณหภูมิไว้ในระดับติดลบเพื่อปกป้องผิวชั้นบนจากความร้อน
-          </p>
-          <p>ข้อดีของระบบ Cooling -5°C</p>
+          <h3 className="text-2xl text-start">{t("msg11")}</h3>
+          <p>{t("msg12")}</p>
+          <p>{t("msg13")}</p>
           <ul className="list-disc pl-4">
-            <li>ลดอุณหภูมิผิวทันทีทำให้รู้สึกเย็นสบายขณะทำ</li>
-            <li>ช่วยป้องกันการระคายเคือง แสบ หรือร้อนผิว</li>
-            <li>ทำให้สามารถใช้พลังงานได้ลึก และแรงขึ้นโดยยังคงความปลอดภัย</li>
-            <li>ช่วยกระตุ้นการไหลเวียนโลหิต และทำให้ผิวดูสดใสขึ้นหลังทำ</li>
+            <li>{t("msg14")}</li>
+            <li>{t("msg15")}</li>
+            <li>{t("msg16")}</li>
+            <li>{t("msg17")}</li>
           </ul>
-          <p>
-            ระบบนี้ทำให้การทำ Onda Pro ไม่เพียงแต่ "เห็นผลจริง" ในการสลายไขมัน
-            และกระชับผิว แต่ยัง "รู้สึกสบาย" ตลอดขั้นตอนการทำ
-            เหมาะสำหรับผู้ที่ต้องการผลลัพธ์ระดับมืออาชีพโดยไม่ต้องทนเจ็บ
-          </p>
+          <p>{t("msg18")}</p>
         </div>
       </section>
 
       <section>
-        <div className="container flex flex-col sm:flex-row gap-4 items-center">
+        <div className="container flex flex-col sm:flex-row gap-4 justify-between items-center sm:items-start">
           <div className="space-y-2">
-            <h3 className="text-2xl text-start">Onda Pro ทำได้บริเวณไหนบ้าง</h3>
-            <p>
-              สามารถทำได้แทบทุกจุดที่มีไขมันสะสมหรือผิวหย่อนคล้อย เช่น ใบหน้า
-              เหนียง ต้นแขน หน้าท้อง สะโพก เอว ข้างลำตัว หลัง ต้นขา น่อง
-            </p>
-            <p>ไม่ต้องพักฟื้นหลังทำสามารถกลับไปใช้ชีวิตประจำวันได้ทันที</p>
+            <h3 className="text-2xl text-start">{t("msg19")}</h3>
+            <p>{t("msg20")}</p>
+            <ul className="list-disc pl-4">
+              <li>{t("msg21")}</li>
+              <li>{t("msg22")}</li>
+              <li>{t("msg23")}</li>
+              <li>{t("msg24")}</li>
+              <li>{t("msg25")}</li>
+              <li>{t("msg26")}</li>
+              <li>{t("msg27")}</li>
+              <li>{t("msg28")}</li>
+              <li>{t("msg29")}</li>
+              <li>{t("msg30")}</li>
+            </ul>
+            <p>{t("msg31")}</p>
           </div>
           <Image
             className="size-72 object-cover"
             src="/service/onda/face-body-leg.jpg"
-            alt="Onda Pro ทำได้บริเวณไหนบ้าง"
+            alt={t("msg19")}
             width={1200}
             height={1200}
           />
@@ -137,13 +122,13 @@ export default function Page() {
 
       <section className="bg-accent">
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">Onda Pro เหมาะกับใคร</h3>
+          <h3 className="text-2xl text-start">{t("msg32")}</h3>
           <ul className="list-disc pl-4">
-            <li>ผู้ที่มีไขมันส่วนเกินเฉพาะจุดที่ออกกำลังกายแล้วยังไม่ลด</li>
-            <li>ผู้ที่มีผิวไม่เรียบมีเซลลูไลต์</li>
-            <li>ผู้ที่ต้องการกระชับผิวหลังลดน้ำหนัก</li>
-            <li>คุณแม่หลังคลอดที่อยากคืนรูปร่าง</li>
-            <li>ผู้ที่ต้องการเห็นผลโดยไม่ต้องผ่าตัดหรือดูดไขมัน</li>
+            <li>{t("msg33")}</li>
+            <li>{t("msg34")}</li>
+            <li>{t("msg35")}</li>
+            <li>{t("msg36")}</li>
+            <li>{t("msg37")}</li>
           </ul>
         </div>
       </section>

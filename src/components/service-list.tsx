@@ -1,12 +1,14 @@
 "use client";
 
 import { SERVICES } from "@/constants";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 export default function ServiceList() {
+  const t = useTranslations("Service");
   const responsive = {
     lg: {
       breakpoint: { max: 9999, min: 1024 },
@@ -24,17 +26,17 @@ export default function ServiceList() {
 
   return (
     <Carousel responsive={responsive} className="p-2" centerMode infinite>
-      {SERVICES.map(({ name, image, href }) => (
+      {SERVICES.map(({ name, href }) => (
         <div className="p-3">
           <Link href={href}>
             <Image
               className="rounded-2xl hover:scale-110 transition duration-300 ease-in-out"
-              src={`/service/${image}-th.jpg`}
-              alt={name}
+              src={`/service/${name}-th.jpg`}
+              alt={t(name)}
               width={1200}
               height={1200}
             />
-            <p className="text-center mt-4">{name}</p>
+            <p className="text-center mt-4">{t(name)}</p>
           </Link>
         </div>
       ))}

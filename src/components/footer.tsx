@@ -1,4 +1,5 @@
 import { REVIEWS, SERVICES } from "@/constants";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -12,16 +13,19 @@ import {
   FaWhatsapp,
 } from "react-icons/fa6";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("Footer");
+
   return (
     <footer>
       <div className="bg-accent">
         <div className="container mx-auto py-8 px-16">
-          <h2 className="text-3xl text-center mb-8">ติดต่อเรา</h2>
+          <h2 className="text-3xl text-center mb-8">{t("msg01")}</h2>
           <ul className="grid grid-cols-3 sm:grid-cols-6 gap-2 max-w-52 sm:max-w-104 mx-auto">
             <li>
               <Link
-                href="#"
+                href="https://www.facebook.com/thekimlineclinic/"
+                target="_blank"
                 className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
               >
                 <FaFacebookF className="w-8 h-8" />
@@ -29,7 +33,8 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="#"
+                href="https://www.instagram.com/thekimlineclinic/"
+                target="_blank"
                 className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
               >
                 <FaInstagram className="w-8 h-8" />
@@ -37,7 +42,8 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="#"
+                href="https://lin.ee/h7WJ6IU"
+                target="_blank"
                 className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
               >
                 <Image
@@ -51,7 +57,8 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="#"
+                href="https://www.tiktok.com/@kimlineclinic"
+                target="_blank"
                 className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
               >
                 <FaTiktok className="w-8 h-8" />
@@ -59,7 +66,8 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="#"
+                href="https://wa.me/66961622292"
+                target="_blank"
                 className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
               >
                 <FaWhatsapp className="w-9 h-9" />
@@ -67,7 +75,7 @@ export default function Footer() {
             </li>
             <li>
               <Link
-                href="#"
+                href="tel:66961622292"
                 className="text-white bg-secondary w-16 h-16 rounded-2xl flex items-center justify-center"
               >
                 <FaPhone className="w-6 h-6" />
@@ -96,47 +104,43 @@ export default function Footer() {
             />
           </div>
           <div className="w-1/5">
-            <h6 className="pill bg-white text-secondary">แพ็คเกจ โปรโมชั่น</h6>
+            <h6 className="pill bg-white text-secondary">{t("msg02")}</h6>
             <ul className="text-white list-disc list-inside text-xs mt-2 space-y-1 font-light">
               <li>
-                <Link href="#">โปรโมชั่นเปิดคลินิกใหม่</Link>
+                <Link href="/promotion">{t("msg03")}</Link>
               </li>
             </ul>
           </div>
           <div className="w-1/5">
-            <h6 className="pill bg-white text-secondary">บริการของเรา</h6>
+            <h6 className="pill bg-white text-secondary">{t("msg04")}</h6>
             <ul className="text-white list-disc list-inside text-xs mt-2 space-y-1 font-light">
               {SERVICES.map(({ name, href }) => (
                 <li key={name}>
-                  <Link href={href}>{name}</Link>
+                  <Link href={href}>{t(name)}</Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="w-1/5">
-            <h6 className="pill bg-white text-secondary">รีวิวผู้ใช้บริการ</h6>
+            <h6 className="pill bg-white text-secondary">{t("msg05")}</h6>
             <ul className="text-white list-disc list-inside text-xs mt-2 space-y-1 font-light">
               {REVIEWS.map(({ name, href }) => (
                 <li key={name}>
-                  <Link href={href}>{name}</Link>
+                  <Link href={href}>{t(name)}</Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="w-1/5">
-            <h6 className="pill bg-white text-secondary">เกี่ยวกับเรา</h6>
+            <h6 className="pill bg-white text-secondary">{t("msg06")}</h6>
             <ul className="text-white list-inside text-xs mt-2 space-y-1 font-light">
               <li className="flex gap-2 items-center">
                 <FaClock />
-                <p>
-                  เปิดให้บริการทุกวัน
-                  <br />
-                  ตั้งแต่เวลา 10:00 - 20:00 น.
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: t.raw("msg07") }} />
               </li>
               <li className="flex gap-2 items-center">
                 <FaPhone />
-                <p>โทร. 096-162-2292</p>
+                <p>{t("msg08")}</p>
               </li>
               <li className="flex gap-2 items-center">
                 <FaEnvelope />
@@ -144,14 +148,7 @@ export default function Footer() {
               </li>
               <li className="flex gap-2 items-center">
                 <FaMapMarkerAlt />
-                <p>
-                  บริษัท เดอะคิมไลน์ จำกัด
-                  <br />
-                  สำนักงานเลขที่ 91 ซอย 3<br />
-                  จุฑากาญจน์ ต.คอหงส์
-                  <br />
-                  อ.หาดใหญ่ จ.สงขลา 90110
-                </p>
+                <p dangerouslySetInnerHTML={{ __html: t.raw("msg09") }} />
               </li>
             </ul>
           </div>
@@ -163,19 +160,22 @@ export default function Footer() {
 
       <div className="space-y-2 fixed bottom-4 right-4">
         <Link
-          href="#"
+          href="https://www.facebook.com/thekimlineclinic/"
+          target="_blank"
           className="bg-secondary size-10 hidden md:flex items-center justify-center rounded-full text-white shadow-md"
         >
           <FaFacebookF />
         </Link>
         <Link
-          href="#"
+          href="https://www.instagram.com/thekimlineclinic/"
+          target="_blank"
           className="bg-secondary size-10 hidden md:flex items-center justify-center rounded-full text-white shadow-md"
         >
           <FaInstagram className="size-5" />
         </Link>
         <Link
-          href="#"
+          href="https://lin.ee/h7WJ6IU"
+          target="_blank"
           className="bg-secondary size-10 hidden md:flex items-center justify-center rounded-full text-white shadow-md"
         >
           <Image
@@ -187,7 +187,8 @@ export default function Footer() {
           />
         </Link>
         <Link
-          href="#"
+          href="https://wa.me/66961622292"
+          target="_blank"
           className="bg-secondary size-10 hidden md:flex items-center justify-center rounded-full text-white shadow-md"
         >
           <FaWhatsapp className="size-5" />

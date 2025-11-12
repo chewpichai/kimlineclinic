@@ -1,6 +1,7 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Kanit } from "next/font/google";
 import "./globals.css";
 
@@ -10,23 +11,30 @@ const kanit = Kanit({
   subsets: ["latin", "thai"],
 });
 
-export const metadata: Metadata = {
-  title: "คลินิกความงามหาดใหญ่ มาตรฐานเดียวกับเกาหลี | The Kimline Clinic",
-  description:
-    "ปรแกรมฟิลเลอร์ โบท็อกซ์ ยกกระชับ หน้าใส ดริปผิว เลเซอร์ คิมไลน์ตอกย้ำจุดแข็งด้วย นวัตกรรมความงามสไตล์เกาหลี เชื่อมั่นว่าไม่ต้องบินไกลไปถึงเกาหลี ก็ได้รับการดูแลแบบเดียวกัน ทั้งด้านคุณภาพของแท้ ปลอดภัย ไม่ผสม ไม่ลดสเปก",
-};
+export async function generateMetadata() {
+  const t = await getTranslations("Metadata");
 
-export default function RootLayout({
+  return {
+    title: `${t("title")} | The Kimline Clinic`,
+    description: t("description"),
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={`${kanit.variable} antialiased`}>
-        <Header />
-        {children}
-        <Footer />
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

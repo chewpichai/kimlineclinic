@@ -1,20 +1,24 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-export default function Page() {
+export default async function Page() {
+  const locale = await getLocale();
+  const t = await getTranslations("DripTreatment");
+
   return (
     <main>
       <section>
         <Image
           className="w-full sm:hidden"
-          src="/service/drip-treatment/banner-drip-treatment-4-3-th.jpg"
-          alt="ดริปวิตามิน และทรีตเมนต์ฟื้นฟูร่างกาย"
+          src={`/service/drip-treatment/banner-drip-treatment-4-3-${locale}.jpg`}
+          alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src="/service/drip-treatment/banner-drip-treatment-16-9-th.jpg"
-          alt="ดริปวิตามิน และทรีตเมนต์ฟื้นฟูร่างกาย"
+          src={`/service/drip-treatment/banner-drip-treatment-16-9-${locale}.jpg`}
+          alt={t("msg01")}
           width={1920}
           height={720}
         />
@@ -22,37 +26,19 @@ export default function Page() {
 
       <section>
         <div className="container">
-          <h1 className="border-b border-b-secondary pb-4">
-            ดริปวิตามิน และทรีตเมนต์ฟื้นฟูร่างกาย
-            <br />
-            บำรุงผิวให้เปล่งประกายจากภายในสู่ภายนอก
-            <br />
-            ที่ The Kimline Clinic หาดใหญ่
-          </h1>
+          <h1 className="border-b border-b-secondary pb-4">{t("msg01")}</h1>
           <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
             <Image
               className="size-72 rounded-4xl object-cover"
               src="/service/drip-treatment/what-drip-treatment-th.jpg"
-              alt="ดริปวิตามิน และทรีตเมนต์ฟื้นฟูร่างกาย"
+              alt={t("msg01")}
               width={1200}
               height={1200}
             />
             <div className="space-y-2">
-              <h3 className="text-start">ดริปวิตามิน และทรีตเมนต์คืออะไร</h3>
-              <p>
-                ดริปวิตามิน และทรีตเมนต์คือการฟื้นฟูสุขภาพ
-                และผิวพรรณด้วยการเติมวิตามิน สารต้านอนุมูลอิสระ
-                และแร่ธาตุที่จำเป็นเข้าสู่ร่างกายโดยตรง
-                ช่วยบำรุงผิวให้ใสสุขภาพดีลดความอ่อนล้า
-                และเพิ่มพลังให้ร่างกายจากภายใน
-              </p>
-              <p>
-                ที่ The Kimline Clinic หาดใหญ่
-                เรามีโปรแกรมดริปและทรีตเมนต์หลากหลายสูตร
-                ที่คิดค้นโดยแพทย์ผู้เชี่ยวชาญ
-                เพื่อให้เหมาะกับความต้องการของแต่ละคนทั้งสูตรผิวใส สูตรดีท็อกซ์
-                ฟื้นฟูผิวโทรม และสูตรเพิ่มพลังร่างกาย
-              </p>
+              <h3 className="text-start">{t("msg02")}</h3>
+              <p>{t("msg03")}</p>
+              <p>{t("msg04")}</p>
             </div>
           </div>
         </div>
@@ -62,40 +48,32 @@ export default function Page() {
         <div className="container space-y-2">
           <Image
             className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
-            src="/service/drip-treatment/drip-programs2-th.jpg"
-            alt="ประเภทของบูสต์ผิว"
+            src={`/service/drip-treatment/drip-programs2-${locale}.jpg`}
+            alt={t("msg05")}
             width={1200}
             height={1200}
           />
-          <h3 className="text-2xl text-start">
-            ประเภทของดริปวิตามิน (Vitamin Drip Programs)
-          </h3>
+          <h3 className="text-2xl text-start">{t("msg05")}</h3>
           <ul className="list-disc pl-4">
             <li>
-              สูตรผิวขาวใส (Bright & Glow Drip)
-              <p className="font-light">
-                ช่วยปรับผิวให้กระจ่างใสลดความหมองคล้ำเติมความชุ่มชื้นให้ผิวใสเปล่งประกาย
-              </p>
+              {t("msg06")}
+              <br />
+              <span className="font-light">{t("msg07")}</span>
             </li>
             <li>
-              สูตรดีท็อกซ์ตับ (Detox Drip)
-              <p className="font-light">
-                ขับสารพิษออกจากร่างกายฟื้นฟูระบบภูมิคุ้มกัน และลดความอ่อนเพลีย
-              </p>
+              {t("msg08")}
+              <br />
+              <span className="font-light">{t("msg09")}</span>
             </li>
             <li>
-              สูตรฟื้นฟูผิวโทรม (Revitalize Drip)
-              <p className="font-light">
-                เหมาะสำหรับผู้ที่พักผ่อนน้อยผิวแห้ง ขาดน้ำคืนความสดชื่น
-                และสุขภาพดีให้ผิว
-              </p>
+              {t("msg10")}
+              <br />
+              <span className="font-light">{t("msg11")}</span>
             </li>
             <li>
-              สูตรเพิ่มพลัง และภูมิคุ้มกัน (Energy & Immune Boost Drip)
-              <p className="font-light">
-                เสริมวิตามินซี
-                และสารอาหารที่ช่วยให้ร่างกายแข็งแรงสดชื่นพร้อมรับวันใหม่
-              </p>
+              {t("msg12")}
+              <br />
+              <span className="font-light">{t("msg13")}</span>
             </li>
           </ul>
         </div>
@@ -103,30 +81,53 @@ export default function Page() {
 
       <section>
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">เหมาะสำหรับใคร</h3>
+          <h3 className="text-2xl text-start">{t("msg14")}</h3>
           <ul className="list-disc pl-4">
-            <li>ผู้ที่ต้องการฟื้นฟูสุขภาพ และผิวจากภายใน</li>
-            <li>ผู้ที่มีผิวหมองคล้ำเหนื่อยล้าพักผ่อนน้อย</li>
-            <li>ผู้ที่อยากให้ผิวกระจ่างใสสุขภาพดีแบบธรรมชาติ</li>
-            <li>ผู้ที่เตรียมตัวก่อนออกงานหรือท่องเที่ยว</li>
+            <li>
+              {t("msg15")}
+              <br />
+              <span className="font-light">{t("msg16")}</span>
+            </li>
+            <li>
+              {t("msg17")}
+              <br />
+              <span className="font-light">{t("msg18")}</span>
+            </li>
+            <li>
+              {t("msg19")}
+              <br />
+              <span className="font-light">{t("msg20")}</span>
+            </li>
+            <li>
+              {t("msg21")}
+              <br />
+              <span className="font-light">{t("msg22")}</span>
+            </li>
           </ul>
         </div>
       </section>
 
       <section className="bg-accent">
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">
-            ทำไมต้องดริปวิตามิน และทรีตเมนต์ที่ The Kimline Clinic
-          </h3>
+          <h3 className="text-2xl text-start">{t("msg23")}</h3>
           <ul className="list-disc pl-4">
-            <li>ใช้วิตามินแท้นำเข้าผ่าน อย.ไทยปลอดภัย 100%</li>
-            <li>ดูแลโดยแพทย์ผู้เชี่ยวชาญด้านผิว และสุขภาพ</li>
-            <li>
-              มีสูตรเฉพาะ "Kimline Signature Drip" ปรับตามสภาพผิว
-              และร่างกายแต่ละบุคคล
-            </li>
-            <li>ห้องดริปสะอาดผ่อนคลายพร้อมบรรยากาศสบายแบบสปา</li>
-            <li>เห็นผลหลังทำทันทีผิวใสดูสุขภาพดีขึ้น</li>
+            <li>{t("msg24")}</li>
+            <li>{t("msg25")}</li>
+            <li>{t("msg26")}</li>
+            <li>{t("msg27")}</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div className="container space-y-2">
+          <h3 className="text-2xl text-start">{t("msg28")}</h3>
+          <ul className="list-disc pl-4">
+            <li>{t("msg29")}</li>
+            <li>{t("msg30")}</li>
+            <li>{t("msg31")}</li>
+            <li>{t("msg32")}</li>
+            <li>{t("msg33")}</li>
           </ul>
         </div>
       </section>

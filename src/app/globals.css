@@ -20,6 +20,10 @@
     @apply font-light text-3xl text-center mb-4 text-primary;
   }
 
+  button {
+    @apply cursor-pointer;
+  }
+
   .pill {
     @apply bg-secondary text-white py-1 px-6 rounded-full text-center;
   }

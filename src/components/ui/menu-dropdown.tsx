@@ -1,10 +1,17 @@
 import { MAIN_MENU } from "@/constants";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import classNames from "classnames";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa6";
 
-export default function MenuDropdown({ className }: { className?: string }) {
+export default async function MenuDropdown({
+  className,
+}: {
+  className?: string;
+}) {
+  const t = await getTranslations("Menu");
+
   return (
     <Menu as="div" className={classNames("relative flex", className)}>
       <MenuButton className="inline-flex items-center gap-1 ml-auto">
@@ -22,7 +29,7 @@ export default function MenuDropdown({ className }: { className?: string }) {
                 href={href}
                 className="flex gap-1 px-4 py-2 text-sm data-focus:bg-accent data-focus:text-accent data-focus:outline-hidden"
               >
-                {name}
+                {t(name)}
               </Link>
             </MenuItem>
           ))}

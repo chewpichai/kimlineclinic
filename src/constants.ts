@@ -1,29 +1,25 @@
 export const MAIN_MENU = [
-  { name: "หน้าแรก", href: "/" },
-  { name: "แพ็คเกจ", href: "/package" },
-  { name: "บริการ", href: "/service" },
+  { name: "home", href: "/" },
+  { name: "promotion", href: "/promotion" },
+  { name: "service", href: "/service" },
 ] as const;
 
 export const REVIEWS = [
-  { name: "หน้าเรียว", href: "/service/v-shaped-face" },
-  { name: "ยกกระชับ", href: "/service/face-lifting" },
-  { name: "หน้าใส", href: "/service/glowing-skin" },
-  { name: "ผิวเรียบเนียน", href: "/service/smooth-skin" },
+  { name: "v-shaped-face", href: "/review/v-shaped-face" },
+  { name: "face-lifting", href: "/review/face-lifting" },
+  { name: "glowing-skin", href: "/review/glowing-skin" },
+  { name: "smooth-skin", href: "/review/smooth-skin" },
 ];
 
 export const SERVICES = [
-  { name: "ONDA PRO", image: "onda", href: "/service/onda" },
-  { name: "MYOUNG", image: "myoung", href: "/service/myoung" },
-  { name: "ฟิลเลอร์", image: "filler", href: "/service/filler" },
-  { name: "โบท็อกซ์", image: "botox", href: "/service/botox" },
-  { name: "ร้อยไหม", image: "thread-lifting", href: "/service/thread-lifting" },
-  { name: "บูสผิว", image: "booster", href: "/service/booster" },
-  {
-    name: "ดริปวิตามิน และทรีทเมนต์",
-    image: "drip-treatment",
-    href: "/service/drip-treatment",
-  },
-  { name: "หน้าเรียว", image: "face-lifting", href: "/service/face-lifting" },
-  { name: "กำจัดขน", image: "hair-removal", href: "/service/hair-removal" },
-  { name: "ปากกาลดน้ำหนัก", image: "weight-loss-pen", href: "weight-loss-pen" },
+  { name: "onda", href: "/service/onda" },
+  { name: "myoung", href: "/service/myoung" },
+  { name: "filler", href: "/service/filler" },
+  { name: "botox", href: "/service/botox" },
+  { name: "thread-lifting", href: "/service/thread-lifting" },
+  { name: "booster", href: "/service/booster" },
+  { name: "drip-treatment", href: "/service/drip-treatment" },
+  { name: "v-shaped-face", href: "/service/v-shaped-face" },
+  { name: "hair-removal", href: "/service/hair-removal" },
+  { name: "weight-loss-pen", href: "/service/weight-loss-pen" },
 ] as const;

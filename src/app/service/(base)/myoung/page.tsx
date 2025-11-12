@@ -1,20 +1,24 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-export default function Page() {
+export default async function Page() {
+  const locale = await getLocale();
+  const t = await getTranslations("Myoung");
+
   return (
     <main>
       <section>
         <Image
           className="w-full sm:hidden"
-          src="/service/myoung/myoung-banner-4-3-th.jpg"
-          alt="Myoung ยกกระชับผิวด้วยพลังงาน SFMS + RF"
+          src={`/service/myoung/myoung-banner-4-3-${locale}.jpg`}
+          alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src="/service/myoung/myoung-banner-16-9-th.jpg"
-          alt="Myoung ยกกระชับผิวด้วยพลังงาน SFMS + RF"
+          src={`/service/myoung/myoung-banner-16-9-${locale}.jpg`}
+          alt={t("msg01")}
           width={1920}
           height={720}
         />
@@ -22,40 +26,25 @@ export default function Page() {
 
       <section>
         <div className="container">
-          <h1 className="border-b border-b-secondary pb-4">
-            Myoung ยกกระชับผิวด้วยพลังงาน SFMS + RF
-            <br />
-            ยกถึงชั้นกล้ามเนื้อหน้าเฟิร์มกระชับดูเด็กขึ้น
-          </h1>
+          <h1 className="border-b border-b-secondary pb-4">{t("msg01")}</h1>
           <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
             <Image
               className="size-72 rounded-4xl object-cover"
               src="/service/myoung/model-myoung.jpg"
-              alt="Myoung ยกกระชับผิวด้วยพลังงาน SFMS + RF"
+              alt={t("msg01")}
               width={1200}
               height={1200}
             />
             <div className="space-y-2">
-              <h3 className="text-start">Myoung คืออะไร</h3>
-              <p>
-                Myoung by The Kimline Clinic หาดใหญ่
-                คือเทคโนโลยียกกระชับผิวรุ่นใหม่ที่ใช้พลังงาน SFMS (Super Fine
-                Micro-Stimulation) ยกได้ลึกถึงชั้น SMAS
-                ชั้นเดียวกับที่ใช้ในการดึงหน้าโดยไม่ต้องผ่าตัด
-              </p>
-              <p>
-                พร้อมพลังงาน RF (Radio Frequency) กระตุ้นการสร้างคอลลาเจน และ
-                อีลาสตินช่วยให้ผิวเรียบเนียนใส และเฟิร์มขึ้นอย่างเป็นธรรมชาติ
-              </p>
-              <p>
-                ที่ The Kimline Clinic เราเน้นความปลอดภัยผลลัพธ์เป็นธรรมชาติ
-                และเครื่องมือแท้ที่ผ่านการรับรองมาตรฐาน
-              </p>
+              <h3 className="text-start">{t("msg02")}</h3>
+              <p>{t("msg03")}</p>
+              <p>{t("msg04")}</p>
+              <p>{t("msg05")}</p>
               <ul className="list-disc pl-4">
-                <li>ไม่ต้องใช้ยาชา</li>
-                <li>ไม่ต้องผ่าตัด</li>
-                <li>ไม่มีรอย ไม่มีแผล</li>
-                <li>เห็นผลยกกระชับจากภายในสู่ภายนอก</li>
+                <li>{t("msg06")}</li>
+                <li>{t("msg07")}</li>
+                <li>{t("msg08")}</li>
+                <li>{t("msg09")}</li>
               </ul>
             </div>
           </div>
@@ -65,21 +54,19 @@ export default function Page() {
       <section className="bg-accent">
         <div className="container flex flex-col sm:flex-row sm:justify-between items-center sm:items-start gap-4">
           <div className="space-y-2">
-            <h3 className="text-2xl text-start">
-              บริเวณที่ทำได้ (7 จุดหัตถการ)
-            </h3>
+            <h3 className="text-2xl text-start">{t("msg10")}</h3>
             <ul className="list-disc pl-4">
-              <li>หน้าผาก</li>
-              <li>ใต้ตา 2 ข้าง</li>
-              <li>แก้ม 2 ข้าง</li>
-              <li>ใต้คาง</li>
-              <li>ท้ายทอย (ช่วยบรรเทาอาการออฟฟิศซินโดรม)</li>
+              <li>{t("msg11")}</li>
+              <li>{t("msg12")}</li>
+              <li>{t("msg13")}</li>
+              <li>{t("msg14")}</li>
+              <li>{t("msg15")}</li>
             </ul>
           </div>
           <Image
             className="size-72 rounded-4xl"
             src="/service/myoung/treatment-areas.jpg"
-            alt="myoung บริเวณที่ทำได้ (7 จุดหัตถการ)"
+            alt={t("msg10")}
             width={1200}
             height={1200}
           />
@@ -88,38 +75,31 @@ export default function Page() {
 
       <section>
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">เหมาะสำหรับใคร</h3>
+          <h3 className="text-2xl text-start">{t("msg16")}</h3>
           <ul className="list-disc pl-4">
-            <li>ผู้ที่ไม่ต้องการผ่าตัดหรือฉีดสารแปลกปลอม</li>
-            <li>ผู้ที่กลัวเข็มแต่ต้องการให้ใบหน้ากระชับขึ้น</li>
-            <li>ผู้ที่อยากให้ผิวหน้าเฟิร์มเต่งตึงเหมือนออกกำลังกายให้ผิว</li>
+            <li>{t("msg17")}</li>
+            <li>{t("msg18")}</li>
+            <li>{t("msg19")}</li>
           </ul>
-          <p>ไม่ต้องพักฟื้นหลังทำสามารถกลับไปใช้ชีวิตประจำวันได้ทันที</p>
         </div>
       </section>
 
       <section className="bg-accent">
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">
-            แนะนำโปรแกรมจาก The Kimline Clinic
-          </h3>
-          <p>
-            เพื่อผลลัพธ์ที่ดีที่สุดแนะนำทำ 4 ครั้งห่างกัน 1 สัปดาห์ภายใน 1
-            เดือนเห็นการเปลี่ยนแปลงตั้งแต่ครั้งแรกผิวค่อยๆ
-            ยกกระชับเรียวขึ้นอย่างเป็นธรรมชาติ
-          </p>
+          <h3 className="text-2xl text-start">{t("msg20")}</h3>
+          <p>{t("msg21")}</p>
         </div>
       </section>
 
       <section>
         <div className="container space-y-2">
-          <h3 className="text-2xl text-start">ไม่เหมาะสำหรับ</h3>
+          <h3 className="text-2xl text-start">{t("msg22")}</h3>
           <ul className="list-disc pl-4">
-            <li>ผู้ป่วยโรคลมชัก</li>
-            <li>ผู้ป่วยโรคหัวใจ หรือหลอดเลือดหัวใจ</li>
-            <li>ผู้ที่มีไข้ หรืออยู่ระหว่างรักษาโรคมะเร็ง เนื้องอก</li>
-            <li>ผู้ที่ฝังเครื่องกระตุ้นหัวใจ หรือเครื่องกระตุ้นประสาท</li>
-            <li>ผู้ที่มีอุปกรณ์ไฟฟ้าในร่างกายบริเวณใบหน้า</li>
+            <li>{t("msg23")}</li>
+            <li>{t("msg24")}</li>
+            <li>{t("msg25")}</li>
+            <li>{t("msg26")}</li>
+            <li>{t("msg27")}</li>
           </ul>
         </div>
       </section>
