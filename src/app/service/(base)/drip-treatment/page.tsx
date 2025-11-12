@@ -1,6 +1,15 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 
+export async function generateMetadata() {
+  const t = await getTranslations("DripTreatment");
+
+  return {
+    title: `${t("msg01")} | The Kimline Clinic`,
+    description: t("msg03"),
+  };
+}
+
 export default async function Page() {
   const locale = await getLocale();
   const t = await getTranslations("DripTreatment");

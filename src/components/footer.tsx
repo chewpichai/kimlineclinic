@@ -12,6 +12,7 @@ import {
   FaTiktok,
   FaWhatsapp,
 } from "react-icons/fa6";
+import ScrollTopButton from "./ui/scroll-top-button";
 
 export default async function Footer() {
   const t = await getTranslations("Footer");
@@ -162,21 +163,21 @@ export default async function Footer() {
         <Link
           href="https://www.facebook.com/thekimlineclinic/"
           target="_blank"
-          className="bg-secondary size-10 hidden md:flex items-center justify-center rounded-full text-white shadow-md"
+          className="bg-secondary size-10 flex items-center justify-center rounded-full text-white shadow-md"
         >
           <FaFacebookF />
         </Link>
         <Link
           href="https://www.instagram.com/thekimlineclinic/"
           target="_blank"
-          className="bg-secondary size-10 hidden md:flex items-center justify-center rounded-full text-white shadow-md"
+          className="bg-secondary size-10 flex items-center justify-center rounded-full text-white shadow-md"
         >
           <FaInstagram className="size-5" />
         </Link>
         <Link
           href="https://lin.ee/h7WJ6IU"
           target="_blank"
-          className="bg-secondary size-10 hidden md:flex items-center justify-center rounded-full text-white shadow-md"
+          className="bg-secondary size-10 flex items-center justify-center rounded-full text-white shadow-md"
         >
           <Image
             className="size-5"
@@ -189,22 +190,11 @@ export default async function Footer() {
         <Link
           href="https://wa.me/66961622292"
           target="_blank"
-          className="bg-secondary size-10 hidden md:flex items-center justify-center rounded-full text-white shadow-md"
+          className="bg-secondary size-10 flex items-center justify-center rounded-full text-white shadow-md"
         >
           <FaWhatsapp className="size-5" />
         </Link>
-        <Link
-          href="#"
-          className="bg-secondary size-10 flex items-center justify-center rounded-full text-white shadow-md"
-        >
-          <Image
-            className="size-5"
-            src="/icon-up.svg"
-            alt="scroll to top"
-            width={50}
-            height={53}
-          />
-        </Link>
+        <ScrollTopButton />
       </div>
     </footer>
   );
