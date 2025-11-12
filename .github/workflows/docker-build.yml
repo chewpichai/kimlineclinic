@@ -40,11 +40,11 @@ jobs:
       - name: Deploy to kimlineclinic
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOSTS }}
+          host: ${{ vars.HOSTS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: 22
           script: |
-            cd app
+            cd kimlineclinic
             docker pull ghcr.io/${{ github.repository }}:latest
             docker compose -f docker-compose.prod.yml up -d

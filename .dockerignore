@@ -1,0 +1,7 @@
+.env.local
+.git
+.next
+Dockerfile
+cron
+node_modules
+websocket
