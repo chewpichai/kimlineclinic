@@ -19,14 +19,14 @@ export default function Hero() {
       <div>
         <Image
           className="w-full sm:hidden"
-          src={`/home/grand-opening-4-3-${locale}.jpg`}
+          src={`/home/grand-opening-4-3-${locale}.webp`}
           alt="Grand opening โปรโมชั่นเปิดคลินิกใหม่"
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/home/grand-opening-16-9-${locale}.jpg`}
+          src={`/home/grand-opening-16-9-${locale}.webp`}
           alt="Grand opening โปรโมชั่นเปิดคลินิกใหม่"
           width={1920}
           height={720}
@@ -35,14 +35,14 @@ export default function Hero() {
       <div>
         <Image
           className="w-full sm:hidden"
-          src={`/home/comming-soon-4-3-${locale}.jpg`}
+          src={`/home/comming-soon-4-3-${locale}.webp`}
           alt="Grand opening โปรโมชั่นเปิดคลินิกใหม่"
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/home/comming-soon-16-9-${locale}.jpg`}
+          src={`/home/comming-soon-16-9-${locale}.webp`}
           alt="Grand opening โปรโมชั่นเปิดคลินิกใหม่"
           width={1920}
           height={720}

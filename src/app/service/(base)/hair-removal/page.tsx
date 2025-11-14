@@ -19,14 +19,14 @@ export default async function Page() {
       <section>
         <Image
           className="w-full sm:hidden"
-          src={`/service/hair-removal/banner-hair-removal-4-3-${locale}.jpg`}
+          src={`/service/hair-removal/banner-hair-removal-4-3-${locale}.webp`}
           alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/service/hair-removal/banner-hair-removal-16-9-${locale}.jpg`}
+          src={`/service/hair-removal/banner-hair-removal-16-9-${locale}.webp`}
           alt={t("msg01")}
           width={1920}
           height={720}
@@ -48,7 +48,7 @@ export default async function Page() {
         <div className="container space-y-2">
           <Image
             className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
-            src={`/service/hair-removal/popular-treatment-areas-${locale}.jpg`}
+            src={`/service/hair-removal/popular-treatment-areas-${locale}.webp`}
             alt={t("msg05")}
             width={1550}
             height={570}
@@ -77,7 +77,7 @@ export default async function Page() {
           </ul>
           <Image
             className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
-            src="/service/hair-removal/before-after-hair-loss.jpg"
+            src="/service/hair-removal/before-after-hair-loss.webp"
             alt={t("msg12")}
             width={1550}
             height={570}

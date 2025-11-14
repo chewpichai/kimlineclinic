@@ -19,14 +19,14 @@ export default async function Page() {
                   <div className="relative group">
                     <Image
                       className="rounded-2xl shadow"
-                      src={`/service/${name}-${locale}.jpg`}
+                      src={`/service/${name}-${locale}.webp`}
                       alt={t(name)}
                       width={1200}
                       height={1200}
                     />
                     <Image
                       className="hidden xl:block absolute top-0 left-0 group-hover:hidden rounded-2xl"
-                      src={`/service/${name}.jpg`}
+                      src={`/service/${name}.webp`}
                       alt={t(name)}
                       width={1200}
                       height={1200}

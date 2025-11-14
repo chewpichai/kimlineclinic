@@ -19,14 +19,14 @@ export default async function Page() {
       <section>
         <Image
           className="w-full sm:hidden"
-          src={`/service/botox/banner-botox-4-3-${locale}.jpg`}
+          src={`/service/botox/banner-botox-4-3-${locale}.webp`}
           alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/service/botox/banner-botox-16-9-${locale}.jpg`}
+          src={`/service/botox/banner-botox-16-9-${locale}.webp`}
           alt={t("msg01")}
           width={1920}
           height={720}
@@ -39,7 +39,7 @@ export default async function Page() {
           <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
             <Image
               className="size-72 rounded-4xl object-cover"
-              src="/service/botox/model-botox.jpg"
+              src="/service/botox/model-botox.webp"
               alt={t("msg01")}
               width={1200}
               height={1200}
@@ -102,7 +102,7 @@ export default async function Page() {
           </div>
           <Image
             className="size-72 rounded-4xl"
-            src="/service/botox/popular-brands-th.jpg"
+            src="/service/botox/popular-brands-th.webp"
             alt={t("msg15")}
             width={1200}
             height={1200}

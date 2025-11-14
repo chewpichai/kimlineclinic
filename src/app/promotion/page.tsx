@@ -10,14 +10,14 @@ export default async function Page() {
       <div>
         <Image
           className="w-full sm:hidden"
-          src={`/promotion/opening-4-3-${locale}.jpg`}
+          src={`/promotion/opening-4-3-${locale}.webp`}
           alt={t("msg02")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/promotion/opening-16-9-${locale}.jpg`}
+          src={`/promotion/opening-16-9-${locale}.webp`}
           alt={t("msg02")}
           width={1920}
           height={720}
@@ -29,7 +29,7 @@ export default async function Page() {
           <h2>{t("msg01")}</h2>
           <div className="max-w-md space-y-4 mx-auto">
             <Image
-              src={`/promotion/promotion-opening-${locale}.jpg`}
+              src={`/promotion/promotion-opening-${locale}.webp`}
               alt={t("msg02")}
               width={960}
               height={1200}

@@ -31,7 +31,7 @@ export default function ServiceList() {
           <Link href={href}>
             <Image
               className="rounded-2xl hover:scale-110 transition duration-300 ease-in-out"
-              src={`/service/${name}-th.jpg`}
+              src={`/service/${name}-th.webp`}
               alt={t(name)}
               width={1200}
               height={1200}

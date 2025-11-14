@@ -53,7 +53,7 @@ export default async function Page() {
                 <Link href={`/review/${i + 1}`}>
                   <Image
                     className="rounded-2xl shadow"
-                    src="/review/model.jpg"
+                    src="/review/model.webp"
                     alt="model"
                     width={1200}
                     height={1200}

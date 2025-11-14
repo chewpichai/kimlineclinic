@@ -39,7 +39,7 @@ export default async function Page() {
         <div className="container">
           <h2>{t("msg03")}</h2>
           <PromotionList />
-          <Link className="pill mx-auto block w-fit" href="/package">
+          <Link className="pill mx-auto block w-fit" href="/promotion">
             {t("msg04")}
           </Link>
         </div>
@@ -140,10 +140,12 @@ export default async function Page() {
       <section className="flex flex-col sm:flex-row gap-2 sm:gap-4 container">
         <div className="sm:w-1/2 border-6 border-secondary rounded-xl">
           <iframe
-            className="aspect-video rounded-lg"
+            className="aspect-4/3 rounded-lg"
             src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d705.9723542919397!2d100.48945605990504!3d7.029265175215334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sth!4v1762531634004!5m2!1sen!2sth"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            width="100%"
+            height="100%"
           ></iframe>
         </div>
         <div>

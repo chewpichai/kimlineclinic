@@ -19,14 +19,14 @@ export default async function Page() {
       <section>
         <Image
           className="w-full sm:hidden"
-          src={`/service/onda/service-onda-banner-4-3-${locale}.jpg`}
+          src={`/service/onda/service-onda-banner-4-3-${locale}.webp`}
           alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/service/onda/service-onda-banner-16-9-${locale}.jpg`}
+          src={`/service/onda/service-onda-banner-16-9-${locale}.webp`}
           alt={t("msg01")}
           width={1920}
           height={720}
@@ -39,7 +39,7 @@ export default async function Page() {
           <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
             <Image
               className="size-72 rounded-4xl object-cover"
-              src="/service/onda/onda-1200x1200.jpg"
+              src="/service/onda/onda-1200x1200.webp"
               alt={t("msg02")}
               width={1200}
               height={1200}
@@ -58,7 +58,7 @@ export default async function Page() {
           <h3 className="text-2xl text-start">{t("msg05")}</h3>
           <Image
             className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
-            src="/service/onda/pocket-shallow-deep.jpg"
+            src="/service/onda/pocket-shallow-deep.webp"
             alt={t("msg05")}
             width={1550}
             height={570}
@@ -121,7 +121,7 @@ export default async function Page() {
           </div>
           <Image
             className="size-72 object-cover"
-            src="/service/onda/face-body-leg.jpg"
+            src="/service/onda/face-body-leg.webp"
             alt={t("msg19")}
             width={1200}
             height={1200}

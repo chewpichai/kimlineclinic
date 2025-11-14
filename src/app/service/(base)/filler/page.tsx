@@ -19,14 +19,14 @@ export default async function Page() {
       <section>
         <Image
           className="w-full sm:hidden"
-          src={`/service/filler/banner-filler-4-3-${locale}.jpg`}
+          src={`/service/filler/banner-filler-4-3-${locale}.webp`}
           alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/service/filler/banner-filler-16-9-${locale}.jpg`}
+          src={`/service/filler/banner-filler-16-9-${locale}.webp`}
           alt={t("msg01")}
           width={1920}
           height={720}
@@ -39,7 +39,7 @@ export default async function Page() {
           <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
             <Image
               className="size-72 rounded-4xl object-cover"
-              src="/service/filler/model-filler.jpg"
+              src="/service/filler/model-filler.webp"
               alt={t("msg01")}
               width={1200}
               height={1200}
@@ -80,7 +80,7 @@ export default async function Page() {
           </ul>
           <Image
             className="rounded-xl sm:rounded-2xl lg:rounded-4xl"
-            src="/service/filler/before-after-filler.jpg"
+            src="/service/filler/before-after-filler.webp"
             alt={t("msg05")}
             width={1550}
             height={570}
@@ -112,7 +112,7 @@ export default async function Page() {
           </div>
           <Image
             className="size-72 rounded-4xl"
-            src="/service/filler/popular-brands-th.jpg"
+            src="/service/filler/popular-brands-th.webp"
             alt={t("msg14")}
             width={1200}
             height={1200}

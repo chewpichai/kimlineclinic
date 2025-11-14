@@ -13,7 +13,7 @@ export default function Page() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Image
               className="sm:w-1/3 object-cover"
-              src="/review/model.jpg"
+              src="/review/model.webp"
               alt="review"
               width={1200}
               height={1200}

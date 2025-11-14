@@ -19,14 +19,14 @@ export default async function Page() {
       <section>
         <Image
           className="w-full sm:hidden"
-          src={`/service/thread-lifting/banner-thread-lift-4-3-${locale}.jpg`}
+          src={`/service/thread-lifting/banner-thread-lift-4-3-${locale}.webp`}
           alt={t("msg01")}
           width={1024}
           height={768}
         />
         <Image
           className="w-full hidden sm:block"
-          src={`/service/thread-lifting/banner-thread-lift-16-9-${locale}.jpg`}
+          src={`/service/thread-lifting/banner-thread-lift-16-9-${locale}.webp`}
           alt={t("msg01")}
           width={1920}
           height={720}
@@ -39,7 +39,7 @@ export default async function Page() {
           <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start">
             <Image
               className="size-72 rounded-4xl object-cover"
-              src="/service/thread-lifting/model-thread-lift.jpg"
+              src="/service/thread-lifting/model-thread-lift.webp"
               alt={t("msg01")}
               width={1200}
               height={1200}
@@ -75,7 +75,7 @@ export default async function Page() {
           </ul>
           <Image
             className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
-            src="/service/thread-lifting/thread-types.jpg"
+            src="/service/thread-lifting/thread-types.webp"
             alt={t("msg05")}
             width={1550}
             height={570}
@@ -95,7 +95,7 @@ export default async function Page() {
           </ul>
           <Image
             className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
-            src="/service/thread-lifting/thread-lift.jpg"
+            src="/service/thread-lifting/thread-lift.webp"
             alt={t("msg12")}
             width={1550}
             height={570}
