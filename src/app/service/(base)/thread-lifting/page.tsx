@@ -74,7 +74,7 @@ export default async function Page() {
             </li>
           </ul>
           <Image
-            className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
+            className="border-6 sm:border-12 border-secondary rounded-4xl"
             src="/service/thread-lifting/thread-types.webp"
             alt={t("msg05")}
             width={1550}
@@ -94,7 +94,7 @@ export default async function Page() {
             <li>{t("msg17")}</li>
           </ul>
           <Image
-            className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
+            className="border-6 sm:border-12 border-secondary rounded-4xl"
             src="/service/thread-lifting/thread-lift.webp"
             alt={t("msg12")}
             width={1550}

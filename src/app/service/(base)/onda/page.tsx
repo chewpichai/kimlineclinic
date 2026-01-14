@@ -57,7 +57,7 @@ export default async function Page() {
         <div className="container space-y-2">
           <h3 className="text-2xl text-start">{t("msg05")}</h3>
           <Image
-            className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
+            className="border-6 sm:border-12 border-secondary rounded-4xl"
             src="/service/onda/pocket-shallow-deep.webp"
             alt={t("msg05")}
             width={1550}

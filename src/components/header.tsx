@@ -36,7 +36,11 @@ export default async function Header() {
           ))}
         </ul>
 
-        <Link className="pill ml-2 mr-4" href="/">
+        <Link
+          className="pill ml-2 mr-4"
+          href="https://lin.ee/h7WJ6IU"
+          target="_blank"
+        >
           {t("booking")}
         </Link>
 

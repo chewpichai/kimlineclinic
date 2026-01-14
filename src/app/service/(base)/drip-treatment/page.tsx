@@ -56,7 +56,7 @@ export default async function Page() {
       <section className="bg-accent">
         <div className="container space-y-2">
           <Image
-            className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
+            className="border-6 sm:border-12 border-secondary rounded-4xl"
             src={`/service/drip-treatment/drip-programs2-${locale}.webp`}
             alt={t("msg05")}
             width={1200}

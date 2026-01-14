@@ -47,7 +47,7 @@ export default async function Page() {
       <section className="bg-accent">
         <div className="container space-y-2">
           <Image
-            className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
+            className="border-6 sm:border-12 border-secondary rounded-4xl"
             src={`/service/hair-removal/popular-treatment-areas-${locale}.webp`}
             alt={t("msg05")}
             width={1550}
@@ -76,7 +76,7 @@ export default async function Page() {
             <li>{t("msg17")}</li>
           </ul>
           <Image
-            className="rounded-lg sm:rounded-2xl lg:rounded-3xl"
+            className="border-6 sm:border-12 border-secondary rounded-4xl"
             src="/service/hair-removal/before-after-hair-loss.webp"
             alt={t("msg12")}
             width={1550}

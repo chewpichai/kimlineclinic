@@ -79,7 +79,7 @@ export default async function Page() {
             </li>
           </ul>
           <Image
-            className="rounded-xl sm:rounded-2xl lg:rounded-4xl"
+            className="border-6 sm:border-12 border-secondary rounded-4xl"
             src="/service/filler/before-after-filler.webp"
             alt={t("msg05")}
             width={1550}

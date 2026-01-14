@@ -66,7 +66,7 @@ export default async function Page() {
             </ul>
           </div>
           <Image
-            className="size-72 rounded-xl object-cover"
+            className="size-72 object-cover border-4 sm:border-8 border-secondary rounded-4xl"
             src="/service/weight-loss-pen/how-it-works.webp"
             alt={t("msg05")}
             width={1200}
