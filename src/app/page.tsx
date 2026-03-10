@@ -148,11 +148,9 @@ export default async function Page() {
             height="100%"
           ></iframe>
         </div>
-        <div>
-          <p
-            className="font-extralight"
-            dangerouslySetInnerHTML={{ __html: t.raw("msg16") }}
-          />
+        <div className="font-extralight">
+          <p>ฆสพ.สข ๑๒๐/๒๕๖๙</p>
+          <p dangerouslySetInnerHTML={{ __html: t.raw("msg16") }} />
         </div>
       </section>
     </main>
